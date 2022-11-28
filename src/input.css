@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global styles */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: sans-serif;
+	line-height: 1.6;
+}
+
+h1,h2,h3,h4 {
+	line-height: 1.1;
+}
+
+a {
+	 text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+/* utilities */
+
+@layer utilities {
+	.container {
+		@apply  mx-auto max-w-[1100px] p-4;
+	}
+
+	.flow-content--sm > * + * {
+		@apply mt-2;
+	}
+
+	.flow-content--md > * + * {
+		@apply mt-4;
+	}
+
+	.flow-content--lg > * + * {
+		@apply mt-4;
+	}
+
+}
+
+/* components */
+
+@layer components {
+	.btn {
+		@apply inline-block border-0 px-8 py-3;
+	}
+
+	.btn-primary {
+		@apply bg-orange-600 text-white rounded-full hover:bg-orange-700 duration-300 uppercase ;
+	}
+
+	.section-title {
+		@apply text-3xl font-bold capitalize;
+	}
+}
+
+/* hero */
+
+.hero {
+	min-height: 100vh;
+	background:  linear-gradient(rgba(0 0 0 / .5), rgba(0 0 0 / .5)),url('https://angel-prod-public-content.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/sites/2/2021/02/bungalow-house-design-in-malaysia.jpg') no-repeat center/cover ;
+} 
+
+/* input */
+
+input,textarea {
+	font: inherit;
+	width: 100%;
+	@apply p-2 w-full border-b md:border-b-2 border-b-gray-300;
+}
+
+textarea {
+	resize: vertical;
+	min-height: 200px;
+	max-height: 300px
+}
+
+/* mobile */
+
+@media(max-width: 35em) {
+	html {
+		font-size: 62.5%;
+	}
+}
+
